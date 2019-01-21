@@ -43,3 +43,6 @@ Copy the source of sql.lua into a new ModuleScript in roblox studio. After doing
 ## Documentation
 
 
+#### Module
+###### sql:Query(string Query);
+This creates a [statement](#statement-object) object. It is highly recommended you use prepared statements. To use prepared statements, you must put a question mark in place of a parameter. Prepared statements only work on parameters. EX: ``SELECT * FROM \`table\` WHERE \`name\`=?``

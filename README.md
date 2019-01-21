@@ -1,3 +1,5 @@
+# Please be careful! This IS still sql, and sql injection can be possible if you do not [bind your parameters!]](#roblox-api)
+
 # rbx-sqlite3full-server
 Full access SQL api from roblox.
 

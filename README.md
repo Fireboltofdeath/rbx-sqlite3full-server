@@ -60,28 +60,37 @@ statement:Bind("First Parameter", "Second Parameter", "Third", "Fourth", "Fifth"
 
 ###### statement:Run(...Parameters)
 If Parameters is specified, it'll internally called statement:Bind(...Parameters)
+
 Execute a SQL query that DOES NOT return results. You cannot call this function on queries that return data.
 
 ###### statement:Get(...Parameters)
 If Parameters is specified, it'll internally called statement:Bind(...Parameters)
+
 Execute a SQL query that DOES return results. You cannot call this function on queries that do not return data.
 
 #### Return results
 
 ##### Response table
 The response table contains information about the request.
+
 Success: If the request succeeded
+
 Message: Only shows if failed, less detailed error message
+
 Error: Will only show if the SQL query itself failed, and will contain why the query failed.
+
 ServerResponse: Server's response, containing more detailed response.
 
 Statement:Get and statement:Run both return several values, to get all values you must do `local A, B, C = ...`
 ###### statement:Get(...Parameters)
 First Value: boolean Success
+
 Second Value: (if success) Query results (if failure) Response table
+
 Third Value: (if success) Response table
 
 ##### statement:Run(...Parameters)
 First Value: boolean Success
+
 Second Value: Response table
 

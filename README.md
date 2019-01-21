@@ -45,7 +45,10 @@ Copy the source of sql.lua into a new ModuleScript in roblox studio. After doing
 
 #### Module
 ###### sql:Query(string Query);
-This creates a [statement](#statement-object) object. It is highly recommended you use prepared statements. To use prepared statements, you must put a question mark in place of a parameter. Prepared statements only work on parameters. EX: ``SELECT * FROM `table` WHERE `name`=?``
+This creates a [statement](#statement-object) object. It is highly recommended you use prepared statements. To use prepared statements, you must put a question mark in place of a parameter. Prepared statements only work on parameters. 
+```lua 
+sql:Query("SELECT * FROM `table` WHERE `name`=?");
+```
 
 #### Statement Object
 ###### statement:Bind(...Parameters)
@@ -61,3 +64,24 @@ Execute a SQL query that DOES NOT return results. You cannot call this function 
 
 ###### statement:Get(...Parameters)
 If Parameters is specified, it'll internally called statement:Bind(...Parameters)
+Execute a SQL query that DOES return results. You cannot call this function on queries that do not return data.
+
+#### Return results
+
+##### Response table
+The response table contains information about the request.
+Success: If the request succeeded
+Message: Only shows if failed, less detailed error message
+Error: Will only show if the SQL query itself failed, and will contain why the query failed.
+ServerResponse: Server's response, containing more detailed response.
+
+Statement:Get and statement:Run both return several values, to get all values you must do `local A, B, C = ...`
+###### statement:Get(...Parameters)
+First Value: boolean Success
+Second Value: (if success) Query results (if failure) Response table
+Third Value: (if success) Response table
+
+##### statement:Run(...Parameters)
+First Value: boolean Success
+Second Value: Response table
+

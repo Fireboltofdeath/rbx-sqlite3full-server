@@ -46,3 +46,18 @@ Copy the source of sql.lua into a new ModuleScript in roblox studio. After doing
 #### Module
 ###### sql:Query(string Query);
 This creates a [statement](#statement-object) object. It is highly recommended you use prepared statements. To use prepared statements, you must put a question mark in place of a parameter. Prepared statements only work on parameters. EX: ``SELECT * FROM `table` WHERE `name`=?``
+
+#### Statement Object
+###### statement:Bind(...Parameters)
+Bind the parameters specified in the query. First argument is the first occuring ? and so on. Without using prepared statements, you put yourself at risk of SQL injection.
+
+```lua
+statement:Bind("First Parameter", "Second Parameter", "Third", "Fourth", "Fifth")
+```
+
+###### statement:Run(...Parameters)
+If Parameters is specified, it'll internally called statement:Bind(...Parameters)
+Execute a SQL query that DOES NOT return results. You cannot call this function on queries that return data.
+
+###### statement:Get(...Parameters)
+If Parameters is specified, it'll internally called statement:Bind(...Parameters)

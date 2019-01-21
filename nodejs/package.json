@@ -1,0 +1,17 @@
+{
+  "name": "rbx-sqlite-server",
+  "version": "0.0.1",
+  "description": "Roblox SQLite Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "sqlite3": "^4.0.0",
+    "better-sqlite3": "^5.2.1"
+  },
+  "engines": {
+    "node": "8.x"
+  }
+}

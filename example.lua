@@ -6,7 +6,7 @@ local stmt = SQL:Query("INSERT INTO supertest (id, value, anothervalue, anotheri
 stmt:Bind("35", "Super Value!", userInput, 202);
 stmt:Run();
 
-local values = SQL:Query("SELECT * FROM supertest WHERE id=?"):Get("35");
+local success, values = SQL:Query("SELECT * FROM supertest WHERE id=?"):Get("35");
 for i,v in pairs(values) do
   print(i)
   table.foreach(v, print);

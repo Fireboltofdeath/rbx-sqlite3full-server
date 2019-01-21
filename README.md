@@ -81,6 +81,8 @@ Error: Will only show if the SQL query itself failed, and will contain why the q
 
 ServerResponse: Server's response, containing more detailed response.
 
+
+
 Statement:Get and statement:Run both return several values, to get all values you must do `local A, B, C = ...`
 ###### statement:Get(...Parameters)
 First Value: boolean Success

@@ -29,6 +29,7 @@ Configurations settings:
 
 - **databaseFile**: This is the file where your SQLite3 data is stored. Changing this will reset all data.
 - **ApiToken**: This is the token you will use to access the database. I highly recommend using a password generating and storing the password in your .env file
+- **startupQueries**: All queries in this will run every time the node app is restarted. (if you create tables, you should add "IF NOT EXISTS" to prevent errors)
 
 # Roblox Api
 
@@ -36,7 +37,6 @@ The roblox API is located in the [/roblox](https://github.com/Fireboltofdeath/rb
 Copy the source of sql.lua into a new ModuleScript in roblox studio. After doing so, you can require the module and it'll return a few configuration options.
 - **ApiUrl**: Set this to the url of your glitch (or website) without a trailing slash. EX: https://example.fireboltofdeath.tk
 - **Token**: Set this to the token you set inside of your server.js
-- **startupQueries**: All queries in this will run every time the node app is restarted. (if you create tables, you should add "IF NOT EXISTS" to prevent errors)
 
 ## Documentation
 

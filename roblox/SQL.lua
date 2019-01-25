@@ -11,11 +11,7 @@ function sql:Query(query)
 		statement._bind = {};
 		local param = {...};
 		for i,v in pairs(param) do
-			if (typeof(v) ~= "string") then
-				return error("statement.Bind: value must be string");
-			else
-				table.insert(statement._bind, v);
-			end
+			table.insert(statement._bind, v);
 		end
 	end
 	

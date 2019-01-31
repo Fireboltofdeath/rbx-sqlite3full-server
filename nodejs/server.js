@@ -1,3 +1,5 @@
+(function(){
+   
 const useMultiServer = false;
 
 if (useMultiServer) {
@@ -39,3 +41,5 @@ app.all("/", function(req, res) {
 var list = app.listen(PORT, function() {
   console.log('Server Online, Port ' + list.address().port);
 });
+   
+})();

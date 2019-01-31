@@ -1,5 +1,5 @@
 (function(){
-   const useMultiServer = true; // use multiServer.js instead (settings below will be ignored)
+   const useMultiServer = false; // use multiServer.js instead (settings below will be ignored)
 
    const PORT = process.env.PORT; // I highly recommend against port 80 if you are hosting this under your own VPS (or other machine as such)
 

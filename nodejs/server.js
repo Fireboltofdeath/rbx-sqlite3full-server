@@ -1,3 +1,10 @@
+const useMultiServer = false;
+
+if (useMultiServer) {
+   require("multiServer.js");
+   return ""; // Stop further execution
+}
+
 const PORT = process.env.PORT; // I highly recommend against port 80 if you are hosting this under your own VPS (or other machine as such)
 
 const databaseFile = './.data/rbx-sqlite3-db011.db'; // If you need to reset EVERYTHING, you can change this.
